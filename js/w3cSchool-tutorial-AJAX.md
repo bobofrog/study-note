@@ -18,7 +18,7 @@ AJAX 用了:
 
 Example 1:
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <body>
@@ -53,14 +53,14 @@ Example 2:
 
 创建一个XMLHttpRequest Object:
 
-```
+```javascript
 var xhttp = new XMLHttpRequest();
 ```
 
 ## AJAX request
 向server发送请求:
 
-```
+```javascript
 xhttp.open("GET", "ajax_info.txt", true);
 xhttp.send();
 ```
@@ -80,19 +80,19 @@ GET比POST简单而且快速, 大多数情况下用GET. 但是, 应该在如下�
 ### GET请求
 一个基本的GET请求:
 
-```
+```javascript
 xhttp.open("GET", "demo_get.asp", true);
 xhttp.send();
 ```
 ### POST请求
 一个基本的POST请求:
-```
+```javascript
 xhttp.open("POST", "demo_post.asp", true);
 xhttp.send();
 ```
 如果要POST类似于HTML格式的数据, 需要用setRequestHeader()添加HTTP头, 然后在send()方法中指定数据内容.
 
-```
+```javascript
 xhttp.open("POST", "ajax_test.asp", true);
 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xhttp.send("fname=Henry&lname=Ford");

@@ -3,7 +3,7 @@
 
 ### JS应该放在哪儿
 在Web端用JavaScript编写的代码必须通过HTML/XHTML文档才能执行。下面的例子能使浏览器更快地加载页面：
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +21,7 @@ JS允许程序员直接对变量赋值而无需事先声明
 ### 数组
 数组申明:
 
-```
+```javascript
 var a = [];
 var b = Array();
 var c = Array(4); //[ , , ,  ]
@@ -30,7 +30,7 @@ var c = Array(4); //[ , , ,  ]
 关联数组[key: value],
 用字符串来代替下标, **不要使用这种数组方式, 其本质是对象**
 
-```
+```javascript
 var lennon = [];
 lennon["name"] = "John";
 lennon["year"] = "1940";
@@ -40,7 +40,7 @@ lennon["living"] = "false";
 ### 对象初探
 前面提到的关联数组更好的写法如下:
 
-```
+```javascript
 var lennon = {name: "John",
               year:1940,
               living: false};
@@ -54,7 +54,7 @@ var lennon = {name: "John",
 ### 内建对象
 数组就是一种内建对象:
 
-```
+```javascript
 var beatles = new Array();
 beatles.length //we can use the lenght method of Array
 ```
@@ -88,7 +88,7 @@ DOM把一份文档表示成一课节点树, 非常适合用来表示一份用(X)
 
 **例子:**
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,9 +110,9 @@ DOM把一份文档表示成一课节点树, 非常适合用来表示一份用(X)
 
 ### 节点
 
-**元素节点** DOM的原子, 如<body>, <p>和<ul>之类的元素
+**元素节点** DOM的原子, 如body, p和ul之类的元素
 
-**文本节点** <p> 元素中的"Don't forget to buy this stuff"
+**文本节点** p 元素中的"Don't forget to buy this stuff"
 
 **属性节点** title="a gentle reminder"
 
@@ -129,7 +129,7 @@ alert(typeof document.getElementById("purchases")); //in js
 ### getElementByTagName
 返回一个对象数组, 每个对象分别对应着文档里有着给定标签的一个元素, 入参是标签名字.
 
-```
+```javascript
 for (var i = 0; i < document.getElementsByTagName("li").length; i++) {
     alert(document.getElementsByTagName("li")[i]);
 }
@@ -141,7 +141,7 @@ for (var i = 0; i < document.getElementsByTagName("li").length; i++) {
 ### getAttribute
 不属于document对象, 只能通过元素节点对象调用, 例如:
 
-```
+```javascript
 var paras = document.getElementsByTagName("p");
 for (var i=0; i <paras.length; i++) {
     var title_text = paras[i].getAttribute("title");
@@ -150,7 +150,7 @@ for (var i=0; i <paras.length; i++) {
 ```
 ### setAttribute
 不会改变文档源码里的值(view source)
-```
+```javascript
 var shopping = document.getElementById("purchases");
 alert(shopping.getAttribute("title"));
 shopping.setAttribute("title", "a list of goods");
@@ -162,7 +162,7 @@ alert(shopping.getAttribute("title"));
 ## 第4章 案例研究: JS图片库
 ### 案例1: 在同一页面显示图片
 
-```HTML
+```html
 <!--gallery.html-->
 <!DOCTYPE html>
 <html lang="en">
@@ -193,7 +193,7 @@ alert(shopping.getAttribute("title"));
 </html>
 ```
 
-```JavaScript
+```javascript
 /* showPic.js */
 function showPic(whichpic) {
     var source = whichpic.getAttribute("href");
